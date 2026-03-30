@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soko Nail Artist | Manucure & Pose Ongles Gel à Genève – Institut de Beauté d'Exception</title>
+<meta name="description" content="Soko Nail Artist, spécialiste de la manucure et pose d'ongles à Genève. Semi-permanent, gel, nail art sur-mesure. Révélez l'élégance de vos mains et pieds. Prenez rendez-vous maintenant.">
+<meta name="keywords" content="manucure Genève, pose ongles gel Genève, semi-permanent Genève, nail artist Genève Pictet-de-Rochemont, pédicure Genève, institut beauté ongles">
+<meta property="og:title" content="Soko Nail Artist | Manucure d'Exception à Genève">
+<meta property="og:description" content="Institut de beauté haut de gamme spécialisé en ongles à Genève. Révélez votre élégance.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ===================== VARIABLES ===================== */
+:root {
+  --rose:        #C8556A;
+  --rose-deep:   #A33A51;
+  --rose-light:  #E8A0AE;
+  --rose-pale:   #F4D6DC;
+  --rose-blush:  #FAF0F2;
+  --rouge:       #8B1A30;
+  --rouge-dark:  #5C0E1D;
+  --noir:        #120809;
+  --noir-2:      #1C0D10;
+  --noir-3:      #241217;
+  --blanc:       #FDF7F8;
+  --blanc-soft:  #F5ECEE;
+  --text-muted:  #9A7880;
+  --font-title:  'Playfair Display', Georgia, serif;
+  --font-sub:    'Cormorant Garamond', Georgia, serif;
+  --font-body:   'DM Sans', sans-serif;
+  --radius:      2px;
+  --transition:  0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===================== RESET ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--noir);
+  color: var(--blanc);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+img { display: block; width: 100%; object-fit: cover; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--noir); }
+::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 2px; }
+
+/* ===================== NOISE OVERLAY ===================== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.35;
+}
+
+/* ===================== REVEAL ANIMATION ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+.reveal-delay-4 { transition-delay: 0.6s; }
+.reveal-delay-5 { transition-delay: 0.75s; }
+
+/* ===================== NAV ===================== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 5vw;
+  transition: background var(--transition), padding var(--transition);
+}
+nav.scrolled {
+  background: rgba(18, 8, 9, 0.95);
+  backdrop-filter: blur(16px);
+  padding: 1rem 5vw;
+  border-bottom: 1px solid rgba(200, 85, 106, 0.2);
+}
+.nav-logo {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--rose-light);
+  letter-spacing: 0.04em;
+}
+.nav-logo span { color: var(--rose); }
+.nav-links {
+  display: flex;
+  gap: 2.8rem;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-pale);
+  opacity: 0.7;
+  transition: opacity 0.3s, color 0.3s;
+}
+.nav-links a:hover { opacity: 1; color: var(--rose-light); }
+.nav-cta-btn {
+  background: var(--rose);
+  color: var(--blanc) !important;
+  opacity: 1 !important;
+  padding: 0.55rem 1.6rem;
+  border-radius: var(--radius);
+  font-size: 0.72rem !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 0.3s !important;
+}
+.nav-cta-btn:hover { background: var(--rose-deep) !important; }
+
+/* ===================== SECTION WRAPPER ===================== */
+section { position: relative; }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--rose);
+}
+
+/* ===================== BUTTONS ===================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--rose);
+  color: var(--blanc);
+  padding: 1rem 2.4rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition), transform 0.2s;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--rose-deep); transform: translateY(-2px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: var(--rose-light);
+  padding: 0.9rem 2.2rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(200, 85, 106, 0.5);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--rose-light);
+  color: var(--blanc);
+  background: rgba(200, 85, 106, 0.1);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #25D366;
+  color: #fff;
+  padding: 1rem 2.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+.btn-whatsapp svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+
+/* ===================== 1. HERO ===================== */
+#hero {
+  height: 100vh;
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 5vw 4rem 5vw;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.hero-eyebrow::before {
+  content: '✦';
+  font-size: 0.6rem;
+}
+.hero-h1 {
+  font-family: var(--font-title);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--blanc);
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.01em;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--rose-light);
+  display: block;
+}
+.hero-h2 {
+  font-family: var(--font-sub);
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 420px;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+.hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(200, 85, 106, 0.2);
+}
+.hero-stat-num {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--rose-light);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+.hero-visual {
+  position: relative;
+  overflow: hidden;
+}
+.img-hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.75) saturate(1.1);
+}
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--noir) 0%, transparent 40%),
+              linear-gradient(to top, var(--noir) 0%, transparent 30%);
+}
+.hero-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 3;
+  background: rgba(18,8,9,0.85);
+  border: 1px solid rgba(200,85,106,0.4);
+  backdrop-filter: blur(8px);
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+.hero-badge-top {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.3rem;
+}
+.hero-badge-text {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--rose-light);
+}
+/* scrolling marquee */
+.hero-marquee-wrap {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40px;
+  background: var(--rouge-dark);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+.hero-marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marqueeScroll 28s linear infinite;
+  white-space: nowrap;
+}
+.hero-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose-pale);
+  opacity: 0.85;
+}
+.hero-marquee-dot { color: var(--rose-light); font-size: 0.5rem; }
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===================== 2. DOULEURS ===================== */
+#douleurs {
+  padding: 8rem 0;
+  background: var(--noir-2);
+}
+.douleurs-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  align-items: start;
+}
+.douleurs-headline {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--blanc);
+  position: sticky;
+  top: 6rem;
+}
+.douleurs-headline em { font-style: italic; color: var(--rose-light); display: block; }
+.douleurs-list { display: flex; flex-direction: column; gap: 2.5rem; }
+.douleur-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+  padding: 2rem 2rem 2rem 0;
+  border-bottom: 1px solid rgba(200,85,106,0.12);
+}
+.douleur-num {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-style: italic;
+  color: rgba(200,85,106,0.2);
+  line-height: 1;
+  text-align: right;
+}
+.douleur-title {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--rose-light);
+  margin-bottom: 0.6rem;
+}
+.douleur-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ===================== 3. SOLUTIONS ===================== */
+#solutions {
+  padding: 8rem 0;
+  background: var(--noir);
+  overflow: hidden;
+}
+.solutions-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.solutions-visual {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.img-solutions {
+  height: 600px;
+  object-fit: cover;
+  filter: brightness(0.85) saturate(1.2);
+}
+.solutions-tag {
+  position: absolute;
+  top: 2rem; left: 2rem;
+  background: var(--rose);
+  color: var(--blanc);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+}
+.solutions-visual::before {
+  content: '';
+  position: absolute;
+  bottom: -1px; right: -1px;
+  width: 40%;
+  height: 40%;
+  border-right: 2px solid var(--rose);
+  border-bottom: 2px solid var(--rose);
+  z-index: 2;
+  pointer-events: none;
+}
+.solutions-content {}
+.solutions-headline {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--blanc);
+  margin-bottom: 1.5rem;
+}
+.solutions-headline em { font-style: italic; color: var(--rose-light); }
+.solutions-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+}
+.solutions-pillars { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem; }
+.pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.pillar-icon {
+  width: 40px; height: 40px;
+  background: rgba(200,85,106,0.1);
+  border: 1px solid rgba(200,85,106,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+.pillar-title {
+  font-weight: 500;
+  color: var(--rose-pale);
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+.pillar-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ===================== 4. PRESTATIONS ===================== */
+#prestations {
+  padding: 8rem 0;
+  background: var(--noir-2);
+}
+.prestations-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.prestations-title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--blanc);
+  margin-bottom: 1rem;
+}
+.prestations-title em { font-style: italic; color: var(--rose-light); }
+.prestations-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+}
+.prestations-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  background: transparent;
+  border: 1px solid rgba(200,85,106,0.25);
+  color: var(--text-muted);
+  padding: 0.55rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+.tab-btn:hover, .tab-btn.active {
+  background: var(--rose);
+  border-color: var(--rose);
+  color: var(--blanc);
+}
+.prestation-panel { display: none; }
+.prestation-panel.active { display: block; }
+.prestation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+.prestation-card {
+  background: var(--noir-3);
+  border: 1px solid rgba(200,85,106,0.1);
+  border-radius: var(--radius);
+  padding: 1.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+.prestation-card:hover {
+  border-color: rgba(200,85,106,0.4);
+  background: rgba(200,85,106,0.05);
+}
+.prestation-name {
+  font-family: var(--font-sub);
+  font-size: 1.05rem;
+  color: var(--blanc-soft);
+  font-weight: 400;
+}
+.prestation-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  line-height: 1.5;
+}
+.prestation-price {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--rose-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.prestation-price span { font-size: 0.72rem; font-style: normal; color: var(--text-muted); font-family: var(--font-body); }
+.prestation-extra {
+  background: rgba(139,26,48,0.1);
+  border: 1px solid rgba(139,26,48,0.25);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  margin-top: 1.2rem;
+}
+.prestation-extra-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1rem;
+}
+.prestation-extra-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.extra-pill {
+  background: rgba(200,85,106,0.08);
+  border: 1px solid rgba(200,85,106,0.2);
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  color: var(--rose-pale);
+}
+.avantage-banner {
+  background: linear-gradient(135deg, var(--rouge-dark), var(--rouge));
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.avantage-day {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--rose-pale);
+}
+.avantage-detail { font-size: 0.85rem; color: rgba(244,214,220,0.75); margin-top: 0.2rem; }
+.avantage-badge {
+  background: var(--rose);
+  color: var(--blanc);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* ===================== 5. PREUVE SOCIALE ===================== */
+#preuves {
+  padding: 8rem 0;
+  background: var(--noir);
+  overflow: hidden;
+}
+.preuves-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.preuves-content {}
+.preuves-headline {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--blanc);
+  margin-bottom: 1.5rem;
+}
+.preuves-headline em { font-style: italic; color: var(--rose-light); display: block; }
+.preuves-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+}
+.insta-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(200,85,106,0.06);
+  border: 1px solid rgba(200,85,106,0.2);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.8rem;
+  margin-bottom: 3rem;
+  transition: border-color 0.3s;
+}
+.insta-cta:hover { border-color: var(--rose-light); }
+.insta-icon { font-size: 1.6rem; }
+.insta-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
+.insta-handle { font-family: var(--font-title); font-style: italic; color: var(--rose-light); font-size: 1rem; }
+.insta-arrow { margin-left: auto; color: var(--rose); font-size: 1.2rem; }
+.temoignages { display: flex; flex-direction: column; gap: 1.5rem; }
+.temoignage {
+  background: var(--noir-3);
+  border: 1px solid rgba(200,85,106,0.1);
+  border-radius: var(--radius);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.3s;
+}
+.temoignage:hover { border-color: rgba(200,85,106,0.3); }
+.temoignage::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem; left: 1.5rem;
+  font-family: var(--font-title);
+  font-size: 5rem;
+  color: var(--rose);
+  opacity: 0.2;
+  line-height: 1;
+}
+.temoignage-stars { color: var(--rose); font-size: 0.85rem; margin-bottom: 0.8rem; letter-spacing: 0.15em; }
+.temoignage-text {
+  font-family: var(--font-sub);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--blanc-soft);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+.temoignage-author { display: flex; align-items: center; gap: 0.8rem; }
+.author-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--rouge-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--rose-light);
+  flex-shrink: 0;
+}
+.author-name { font-size: 0.82rem; font-weight: 500; color: var(--rose-pale); }
+.author-detail { font-size: 0.72rem; color: var(--text-muted); }
+.preuves-visual {
+  position: relative;
+}
+.img-preuves {
+  height: 560px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  filter: brightness(0.8) saturate(1.15);
+}
+.preuves-visual::after {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 35%;
+  height: 35%;
+  border-top: 2px solid var(--rose);
+  border-left: 2px solid var(--rose);
+  pointer-events: none;
+}
+.rating-block {
+  position: absolute;
+  bottom: 2rem;
+  right: -2rem;
+  background: var(--noir-2);
+  border: 1px solid rgba(200,85,106,0.3);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  min-width: 160px;
+}
+.rating-num {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--rose-light);
+  line-height: 1;
+}
+.rating-stars { color: var(--rose); font-size: 0.9rem; letter-spacing: 0.1em; margin: 0.4rem 0; }
+.rating-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+
+/* ===================== 6. ABOUT ===================== */
+#about {
+  padding: 8rem 0;
+  background: var(--noir-2);
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 6rem;
+  align-items: center;
+}
+.about-visual { position: relative; }
+.img-about {
+  height: 640px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius);
+  filter: brightness(0.85) saturate(1.1);
+}
+.about-brand-tag {
+  position: absolute;
+  bottom: -1.5rem; right: -1.5rem;
+  background: var(--rose);
+  color: var(--blanc);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  min-width: 120px;
+}
+.brand-tag-num { font-family: var(--font-title); font-size: 2rem; font-style: italic; line-height: 1; }
+.brand-tag-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 0.3rem; opacity: 0.85; }
+.about-content {}
+.about-headline {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--blanc);
+  margin-bottom: 0.5rem;
+}
+.about-role {
+  font-family: var(--font-sub);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--rose);
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+.about-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.about-serment {
+  background: rgba(200,85,106,0.06);
+  border-left: 3px solid var(--rose);
+  padding: 1.5rem 2rem;
+  margin: 2.5rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.serment-text {
+  font-family: var(--font-sub);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--rose-pale);
+  line-height: 1.8;
+}
+.about-certif {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.certif-pill {
+  background: rgba(200,85,106,0.08);
+  border: 1px solid rgba(200,85,106,0.2);
+  color: var(--rose-pale);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+}
+
+/* ===================== 7. FAQ ===================== */
+#faq {
+  padding: 8rem 0;
+  background: var(--noir);
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.faq-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--blanc);
+  margin-bottom: 0.8rem;
+}
+.faq-title em { font-style: italic; color: var(--rose-light); }
+.faq-subtitle { font-size: 0.95rem; color: var(--text-muted); }
+.faq-grid {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.faq-item {
+  background: var(--noir-3);
+  border: 1px solid rgba(200,85,106,0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:hover { border-color: rgba(200,85,106,0.3); }
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  cursor: pointer;
+  color: var(--blanc-soft);
+  font-family: var(--font-sub);
+  font-size: 1.05rem;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+.faq-question:hover { color: var(--rose-light); }
+.faq-question.open { color: var(--rose-light); }
+.faq-icon {
+  width: 24px; height: 24px;
+  border: 1px solid rgba(200,85,106,0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: var(--rose);
+  transition: transform 0.3s, background 0.3s;
+}
+.faq-question.open .faq-icon { transform: rotate(45deg); background: var(--rose); color: var(--blanc); border-color: var(--rose); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  padding: 0 2rem;
+}
+.faq-answer.open {
+  max-height: 400px;
+  padding: 0 2rem 1.5rem;
+}
+
+/* ===================== 8. FINAL CTA ===================== */
+#final-cta {
+  padding: 8rem 0;
+  background: var(--noir-2);
+  position: relative;
+  overflow: hidden;
+}
+#final-cta::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(139,26,48,0.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+.final-cta-inner {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.final-cta-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.final-cta-label::before, .final-cta-label::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--rose);
+}
+.final-cta-headline {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--blanc);
+  margin-bottom: 1.5rem;
+}
+.final-cta-headline em { font-style: italic; color: var(--rose-light); display: block; }
+.final-cta-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+.final-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.final-trust {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.trust-icon { color: var(--rose); font-size: 0.9rem; }
+
+/* ===================== 9. FOOTER ===================== */
+footer {
+  background: var(--noir);
+  border-top: 1px solid rgba(200,85,106,0.15);
+  padding: 5rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.footer-brand-name {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--rose-light);
+  margin-bottom: 1rem;
+}
+.footer-brand-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 280px;
+  margin-bottom: 1.5rem;
+}
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+.footer-social-btn {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(200,85,106,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-light);
+  font-size: 0.9rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+.footer-social-btn:hover { border-color: var(--rose); background: rgba(200,85,106,0.1); }
+.footer-col-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1.5rem;
+}
+.footer-col-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-col-list a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+.footer-col-list a:hover { color: var(--rose-pale); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.contact-ico { color: var(--rose); font-size: 0.9rem; margin-top: 0.15rem; flex-shrink: 0; }
+.contact-val { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+.contact-val a { color: var(--rose-pale); transition: color 0.3s; }
+.contact-val a:hover { color: var(--rose-light); }
+.footer-map {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(200,85,106,0.15);
+}
+.footer-map iframe { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(1) brightness(0.7) sepia(0.3); }
+.footer-bottom {
+  border-top: 1px solid rgba(200,85,106,0.1);
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.footer-copy a { color: var(--rose-dim); }
+.footer-legal { display: flex; gap: 2rem; }
+.footer-legal a { font-size: 0.75rem; color: var(--text-muted); transition: color 0.3s; }
+.footer-legal a:hover { color: var(--rose-pale); }
+.footer-seo {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(200,85,106,0.08);
+}
+.footer-seo p {
+  font-size: 0.75rem;
+  color: rgba(154,120,128,0.5);
+  line-height: 1.7;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-content { padding: 8rem 5vw 4rem; min-height: 60vh; }
+  .hero-visual { height: 45vh; }
+  .hero-visual::after { background: linear-gradient(to bottom, var(--noir) 0%, transparent 30%), linear-gradient(to top, var(--noir) 0%, transparent 30%); }
+  .douleurs-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .douleurs-headline { position: static; }
+  .solutions-inner { grid-template-columns: 1fr; }
+  .preuves-grid { grid-template-columns: 1fr; }
+  .preuves-visual { order: -1; }
+  .rating-block { right: 1rem; }
+  .about-inner { grid-template-columns: 1fr; }
+  .about-brand-tag { right: 1rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 5vw; }
+  nav.scrolled { padding: 0.8rem 5vw; }
+  .nav-links { display: none; }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .prestation-grid { grid-template-columns: 1fr; }
+  .avantage-banner { flex-direction: column; text-align: center; }
+  #hero { min-height: 100svh; }
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ===================== NAV ===================== -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero"><span>Soko</span> Nail Artist ✦</a>
+  <ul class="nav-links">
+    <li><a href="#prestations">Prestations</a></li>
+    <li><a href="#preuves">Avis</a></li>
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li>
+      <a href="https://wa.me/41779800793?text=Bonjour%20Soko%2C%20je%20souhaite%20prendre%20rendez-vous%20!" 
+         target="_blank" class="nav-cta-btn">Réserver →</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ===================== 1. HERO ===================== -->
+<section id="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal">Institut de beauté · Genève · Semilac®</p>
+    <h1 class="hero-h1 reveal reveal-delay-1">
+      Sublimez vos ongles
+      <em>à Genève.</em>
+    </h1>
+    <h2 class="hero-h2 reveal reveal-delay-2">
+      Pose gel, semi-permanent, nail art sur‑mesure — chaque détail est pensé pour révéler une version plus élégante de vous-même.
+    </h2>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="https://wa.me/41779800793?text=Bonjour%20Soko%2C%20je%20souhaite%20prendre%20rendez-vous%20!" 
+         target="_blank" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Prendre rendez-vous
+      </a>
+      <a href="https://www.instagram.com/soko_nail_artist/" target="_blank" class="btn-outline">
+        Découvrir l'univers ✦
+      </a>
+    </div>
+    <div class="hero-stats reveal reveal-delay-4">
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Clientes fidèles</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5★</div>
+        <div class="hero-stat-label">Note moyenne</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3+</div>
+        <div class="hero-stat-label">Ans d'expertise</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <img class="img-hero nail-art"
+         src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&auto=format&fit=crop&q=80"
+         alt="Pose d'ongles gel à Genève – Soko Nail Artist"
+         loading="eager">
+    <div class="hero-badge">
+      <div class="hero-badge-top">Produits certifiés</div>
+      <div class="hero-badge-text">Semilac®</div>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="hero-marquee-wrap">
+    <div class="hero-marquee-track">
+      <span class="hero-marquee-item">Pose Gel<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Semi-Permanent<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Manicure Complète<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Nail Art<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Pédicure<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Renforcement<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Pose Gel<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Semi-Permanent<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Manicure Complète<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Nail Art<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Pédicure<span class="hero-marquee-dot">✦</span></span>
+      <span class="hero-marquee-item">Renforcement<span class="hero-marquee-dot">✦</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. DOULEURS ===================== -->
+<section id="douleurs">
+  <div class="container">
+    <div class="douleurs-grid">
+      <div>
+        <p class="section-label reveal">Le constat</p>
+        <h2 class="douleurs-headline reveal">
+          Vous méritez mieux
+          <em>que l'ordinaire.</em>
+        </h2>
+      </div>
+      <div class="douleurs-list">
+        <div class="douleur-card reveal">
+          <div class="douleur-num">01</div>
+          <div>
+            <div class="douleur-title">Des ongles qui décollent trop vite</div>
+            <div class="douleur-text">Une pose bâclée, des produits bas de gamme et vous vous retrouvez à refaire vos ongles deux semaines après. Votre temps et votre argent méritent mieux.</div>
+          </div>
+        </div>
+        <div class="douleur-card reveal reveal-delay-1">
+          <div class="douleur-num">02</div>
+          <div>
+            <div class="douleur-title">Un résultat qui ne vous ressemble pas</div>
+            <div class="douleur-text">Vous rêvez d'un nail art précis, d'une french impeccable, d'une couleur qui dure — et vous repartez déçue. La finesse fait la différence entre un soin et une œuvre.</div>
+          </div>
+        </div>
+        <div class="douleur-card reveal reveal-delay-2">
+          <div class="douleur-num">03</div>
+          <div>
+            <div class="douleur-title">Pas de suivi, pas d'écoute</div>
+            <div class="douleur-text">Dans les grandes enseignes, vous n'êtes qu'un rendez-vous parmi d'autres. Ici, chaque cliente est unique, chaque pose est pensée pour elle et elle seule.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. SOLUTIONS ===================== -->
+<section id="solutions">
+  <div class="container">
+    <div class="solutions-inner">
+      <div class="solutions-visual reveal">
+        <img class="img-solutions nail-care"
+             src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&auto=format&fit=crop&q=80&sat=-10"
+             alt="Manucure professionnelle Genève – Soko Nail Artist">
+        <span class="solutions-tag">Méthode Soko</span>
+      </div>
+      <div class="solutions-content">
+        <p class="section-label reveal">Notre méthode</p>
+        <h2 class="solutions-headline reveal">
+          La précision comme
+          <em>signature.</em>
+        </h2>
+        <p class="solutions-text reveal reveal-delay-1">
+          Chaque rendez-vous commence par une consultation personnalisée — votre style de vie, la longueur, la forme, la couleur. Rien n'est laissé au hasard. Nous utilisons exclusivement des produits Semilac® certifiés pour une tenue longue durée et un résultat professionnel.
+        </p>
+        <div class="solutions-pillars reveal reveal-delay-2">
+          <div class="pillar">
+            <div class="pillar-icon">✦</div>
+            <div>
+              <div class="pillar-title">Consultation sur-mesure</div>
+              <div class="pillar-desc">Analyse de votre morphologie, style et attentes avant toute pose.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">💎</div>
+            <div>
+              <div class="pillar-title">Produits premium Semilac®</div>
+              <div class="pillar-desc">Gamme professionnelle pour une tenue de 3 à 4 semaines sans compromis.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌸</div>
+            <div>
+              <div class="pillar-title">Finition haute couture</div>
+              <div class="pillar-desc">Chaque ongle est façonné, limé et vérifié avant votre départ.</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/41779800793?text=Bonjour%20Soko%2C%20je%20souhaite%20en%20savoir%20plus%20!" 
+           target="_blank" class="btn-primary reveal reveal-delay-3">
+          Réserver ma consultation →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. PRESTATIONS ===================== -->
+<section id="prestations">
+  <div class="container">
+    <div class="prestations-header">
+      <p class="section-label reveal" style="justify-content:center">Tarifs & Prestations</p>
+      <h2 class="prestations-title reveal">
+        Chaque soin,
+        <em>une promesse.</em>
+      </h2>
+      <p class="prestations-subtitle reveal reveal-delay-1">Tous les prix sont indiqués en CHF et incluent la consultation personnalisée.</p>
+    </div>
+
+    <div class="prestations-tabs reveal reveal-delay-1">
+      <button class="tab-btn active" onclick="showTab('mains', this)">Beauté des mains</button>
+      <button class="tab-btn" onclick="showTab('pieds', this)">Beauté des pieds</button>
+      <button class="tab-btn" onclick="showTab('extras', this)">Supplémentaires</button>
+    </div>
+
+    <!-- MAINS -->
+    <div id="tab-mains" class="prestation-panel active reveal">
+      <div class="prestation-grid">
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Pose vernis classique</div>
+            <div class="prestation-desc">Application précise, finition brillante durable</div>
+          </div>
+          <div class="prestation-price">16 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Pose semi-permanent</div>
+            <div class="prestation-desc">Tenue 3–4 semaines, séchage UV garanti</div>
+          </div>
+          <div class="prestation-price">38 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Pose complète au gel</div>
+            <div class="prestation-desc">Construction ongle en gel, résistance maximale</div>
+          </div>
+          <div class="prestation-price">70 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Renforcement</div>
+            <div class="prestation-desc">Structure gel pour ongles fragiles ou abîmés</div>
+          </div>
+          <div class="prestation-price">55 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Remplissage</div>
+            <div class="prestation-desc">Retouche de repousse sur pose gel existante</div>
+          </div>
+          <div class="prestation-price">55 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure simple</div>
+            <div class="prestation-desc">Lima, cuticules et hydratation des mains</div>
+          </div>
+          <div class="prestation-price">25 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure + vernis classique</div>
+            <div class="prestation-desc">Soin mains complet et pose vernis</div>
+          </div>
+          <div class="prestation-price">38 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure + semi-permanent</div>
+            <div class="prestation-desc">Soin mains & couleur longue durée</div>
+          </div>
+          <div class="prestation-price">55 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure + pose complète gel</div>
+            <div class="prestation-desc">Le duo prestige — soin & construction gel</div>
+          </div>
+          <div class="prestation-price">85 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure + remplissage</div>
+            <div class="prestation-desc">Soin & retouche repousse combinés</div>
+          </div>
+          <div class="prestation-price">65 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure + renforcement</div>
+            <div class="prestation-desc">Soin & structure pour ongles fragiles</div>
+          </div>
+          <div class="prestation-price">65 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure complète</div>
+            <div class="prestation-desc">Soin profond : bain, gommage, massage, hydratation</div>
+          </div>
+          <div class="prestation-price">35 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure complète + vernis</div>
+            <div class="prestation-desc">Soin profond + finition vernis classique</div>
+          </div>
+          <div class="prestation-price">48 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Manicure complète + semi-permanent</div>
+            <div class="prestation-desc">Le summum : soin profond & couleur longue durée</div>
+          </div>
+          <div class="prestation-price">65 <span>CHF</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIEDS -->
+    <div id="tab-pieds" class="prestation-panel">
+      <div class="prestation-grid">
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Pose vernis classique pieds</div>
+            <div class="prestation-desc">Finition colorée nette et durable</div>
+          </div>
+          <div class="prestation-price">25 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Pose semi-permanent pieds</div>
+            <div class="prestation-desc">Résistance à l'eau, brillance longue durée</div>
+          </div>
+          <div class="prestation-price">45 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Beauté des pieds simple</div>
+            <div class="prestation-desc">Lima, cuticules, hydratation ciblée</div>
+          </div>
+          <div class="prestation-price">35 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Beauté pieds simple + vernis</div>
+            <div class="prestation-desc">Soin express & couleur classique</div>
+          </div>
+          <div class="prestation-price">45 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Beauté pieds simple + semi-perm.</div>
+            <div class="prestation-desc">Soin + pose longue durée</div>
+          </div>
+          <div class="prestation-price">60 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Beauté des pieds complète</div>
+            <div class="prestation-desc">Bain, gommage, massage, soin hydratant</div>
+          </div>
+          <div class="prestation-price">45 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Beauté complète + vernis classique</div>
+            <div class="prestation-desc">Le rituel complet & finition colorée</div>
+          </div>
+          <div class="prestation-price">55 <span>CHF</span></div>
+        </div>
+        <div class="prestation-card">
+          <div>
+            <div class="prestation-name">Beauté complète + semi-permanent</div>
+            <div class="prestation-desc">L'expérience pieds ultime, longue durée</div>
+          </div>
+          <div class="prestation-price">70 <span>CHF</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRAS -->
+    <div id="tab-extras" class="prestation-panel">
+      <div class="prestation-extra">
+        <div class="prestation-extra-title">Options & Suppléments</div>
+        <div class="prestation-extra-list">
+          <span class="extra-pill">Réparation ongle semi-perm/gel — 5 à 10 CHF</span>
+          <span class="extra-pill">Supplément french gel/semi-perm — 5 CHF</span>
+          <span class="extra-pill">Déco / Dessin nail art — 1 à 10 CHF</span>
+          <span class="extra-pill">Ongles longs ou forme particulière — 5 à 10 CHF</span>
+          <span class="extra-pill">Dépose — 8 à 25 CHF</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bannière avantage -->
+    <div class="avantage-banner reveal">
+      <div>
+        <div class="avantage-day">Mardi · Mercredi · Jeudi</div>
+        <div class="avantage-detail">Journées Avantages — offres exclusives sur sélection de soins</div>
+      </div>
+      <div>
+        <div style="font-size:0.85rem;color:var(--rose-pale);margin-bottom:0.4rem;">✦ Manicure + pédicure simple + semi-permanent : <strong>–10%</strong></div>
+        <div style="font-size:0.85rem;color:var(--rose-pale);">✦ Manicure + pédicure complète + semi-permanent : <strong>–15%</strong></div>
+      </div>
+      <a href="https://wa.me/41779800793?text=Je%20voudrais%20profiter%20des%20journ%C3%A9es%20avantages%20!" 
+         target="_blank" class="avantage-badge">En profiter →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== 5. PREUVE SOCIALE ===================== -->
+<section id="preuves">
+  <div class="container">
+    <div class="preuves-grid">
+      <div class="preuves-content">
+        <p class="section-label reveal">Elles témoignent</p>
+        <h2 class="preuves-headline reveal">
+          La confiance,
+          <em>elle se mérite.</em>
+        </h2>
+        <p class="preuves-text reveal reveal-delay-1">
+          Soko Nail Artist, c'est avant tout une communauté de femmes qui ont choisi l'excellence pour leurs mains. Chaque témoignage est la preuve que la beauté commence par l'attention portée aux détails.
+        </p>
+        <a href="https://www.instagram.com/soko_nail_artist/" target="_blank" class="insta-cta reveal reveal-delay-2">
+          <span class="insta-icon">📸</span>
+          <div>
+            <div class="insta-label">Rejoignez la communauté</div>
+            <div class="insta-handle">@soko_nail_artist</div>
+          </div>
+          <span class="insta-arrow">→</span>
+        </a>
+
+        <div class="temoignages">
+          <div class="temoignage reveal">
+            <div class="temoignage-stars">★★★★★</div>
+            <p class="temoignage-text">Je suis cliente depuis un an et je ne changerai pour rien au monde. Mes ongles tiennent parfaitement 4 semaines, et l'ambiance est tellement agréable. Soko prend vraiment soin de ses clientes.</p>
+            <div class="temoignage-author">
+              <div class="author-avatar">L</div>
+              <div>
+                <div class="author-name">Laura M.</div>
+                <div class="author-detail">Cliente fidèle · Genève</div>
+              </div>
+            </div>
+          </div>
+          <div class="temoignage reveal reveal-delay-1">
+            <div class="temoignage-stars">★★★★★</div>
+            <p class="temoignage-text">Enfin un résultat qui correspond exactement à ce que j'avais en tête. La french gel est parfaite, les ongles sont réguliers et la pose était rapide. Je recommande à 100%.</p>
+            <div class="temoignage-author">
+              <div class="author-avatar">S</div>
+              <div>
+                <div class="author-name">Sophie K.</div>
+                <div class="author-detail">Nouvelle cliente · Carouge</div>
+              </div>
+            </div>
+          </div>
+          <div class="temoignage reveal reveal-delay-2">
+            <div class="temoignage-stars">★★★★★</div>
+            <p class="temoignage-text">Le nail art que j'ai demandé était complexe et le résultat est bluffant. Soko est une vraie artiste, à l'écoute, précise et passionnée. Mes mains sont superbes.</p>
+            <div class="temoignage-author">
+              <div class="author-avatar">A</div>
+              <div>
+                <div class="author-name">Amira D.</div>
+                <div class="author-detail">Cliente régulière · Genève</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="preuves-visual reveal">
+        <img class="img-preuves nail-portfolio"
+             src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&auto=format&fit=crop&q=80&hue=-10"
+             alt="Résultats manucure Soko Nail Artist Genève">
+        <div class="rating-block">
+          <div class="rating-num">5.0</div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-label">Note Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. ABOUT ===================== -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual reveal">
+        <img class="img-about nail-artist"
+             src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&auto=format&fit=crop&q=80"
+             alt="Soko, nail artist à Genève – portrait">
+        <div class="about-brand-tag">
+          <div class="brand-tag-num">Soko</div>
+          <div class="brand-tag-label">Nail Artist</div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p class="section-label reveal">À propos</p>
+        <h2 class="about-headline reveal">Rencontrez Soko</h2>
+        <p class="about-role reveal">Nail Artist & Fondatrice · Genève</p>
+
+        <p class="about-text reveal reveal-delay-1">
+          Passionnée par l'art des ongles depuis l'adolescence, Soko a transformé sa vocation en métier d'excellence. Formée aux techniques professionnelles de pose gel, semi-permanent et nail art, elle a ouvert son propre espace au cœur de Genève pour proposer une expérience beauté à la hauteur des exigences de ses clientes.
+        </p>
+        <p class="about-text reveal reveal-delay-2">
+          Son approche conjugue rigueur technique, écoute active et sens artistique aigu. Elle travaille exclusivement avec des produits Semilac® certifiés, garantissant un résultat professionnel et durable. Chaque rendez-vous est une conversation, chaque pose une œuvre.
+        </p>
+
+        <div class="about-serment reveal reveal-delay-3">
+          <p class="serment-text">
+            « Mon engagement : que vous repartiez avec des ongles parfaits et un sourire. Chaque cliente mérite un résultat qui la surprend — et qui dure. »
+          </p>
+        </div>
+
+        <div class="about-certif reveal reveal-delay-4">
+          <span class="certif-pill">✦ Semilac® Certified</span>
+          <span class="certif-pill">✦ Pose Gel Pro</span>
+          <span class="certif-pill">✦ Nail Art Expert</span>
+          <span class="certif-pill">✦ 500+ Clientes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. FAQ ===================== -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <p class="section-label reveal" style="justify-content:center">Vos questions</p>
+      <h2 class="faq-title reveal">Tout ce que vous
+        <em>devez savoir.</em>
+      </h2>
+      <p class="faq-subtitle reveal reveal-delay-1">Vous ne trouvez pas la réponse ? Écrivez-nous sur WhatsApp.</p>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Combien de temps dure une pose gel ou semi-permanent ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Une pose semi-permanent tient en général 3 à 4 semaines. La pose gel complète (avec renforcement) peut tenir jusqu'à 5 semaines selon votre croissance et vos habitudes de vie. Nous recommandons un remplissage toutes les 3-4 semaines pour un résultat optimal.
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Est-ce que les produits abîment les ongles ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Nous utilisons exclusivement des produits Semilac® certifiés, formulés pour respecter la santé de l'ongle naturel. La dépose est réalisée avec soin et les ongles sont systématiquement nourris après chaque soin. Un ongle bien préparé et bien déposé ne souffre pas.
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Comment réserver un rendez-vous ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          La réservation se fait directement via WhatsApp au +41 77 980 07 93. Nous vous répondons dans les 24h pour confirmer votre créneau et le type de soin souhaité. Un dépôt peut être demandé pour les premières réservations.
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Proposez-vous des soins pour les pieds ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Absolument ! Nous proposons une gamme complète de soins des pieds : pose vernis classique, semi-permanent, beauté des pieds simple ou complète, avec ou sans vernis. Retrouvez tous les tarifs dans la section Prestations.
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Quelles sont les Journées Avantages ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Les mardi, mercredi et jeudi, nous offrons des réductions exclusives : –10% sur manicure + pédicure simple + semi-permanent, et –15% sur manicure + pédicure complète + semi-permanent. C'est le meilleur moment pour vivre l'expérience complète à un tarif privilégié.
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Faites-vous du nail art sur-mesure ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Oui, le nail art est une passion centrale chez Soko Nail Artist. Dessins, dégradés, french créative, strass, motifs floraux ou géométriques — partagez vos inspirations lors de votre consultation et nous créerons ensemble quelque chose d'unique. Un supplément de 1 à 10 CHF selon la complexité s'applique.
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Où se situe l'institut à Genève ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Nous sommes situés au 37, Avenue Pictet-de-Rochemont, 1207 Genève. Facilement accessible en transports en commun (tram et bus) et avec des possibilités de stationnement à proximité. Retrouvez le plan en bas de page.
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Puis-je offrir un bon cadeau ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Bien sûr ! Les bons cadeaux Soko Nail Artist sont disponibles sur simple demande via WhatsApp. Un cadeau original et luxueux pour toutes les occasions : anniversaires, fêtes, mariages ou simplement pour chouchouter quelqu'un que vous aimez.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. FINAL CTA ===================== -->
+<section id="final-cta">
+  <div class="container">
+    <div class="final-cta-inner">
+      <p class="final-cta-label reveal">Passez à l'action</p>
+      <h2 class="final-cta-headline reveal">
+        Vos ongles méritent
+        <em>l'excellence.</em>
+      </h2>
+      <p class="final-cta-text reveal reveal-delay-1">
+        Rejoignez les centaines de clientes genevoises qui ont choisi Soko Nail Artist pour sublimer leur beauté. Réservez votre rendez-vous maintenant — votre transformation commence ici.
+      </p>
+      <div class="final-cta-actions reveal reveal-delay-2">
+        <a href="https://wa.me/41779800793?text=Bonjour%20Soko%2C%20je%20souhaite%20prendre%20rendez-vous%20!" 
+           target="_blank" class="btn-whatsapp" style="font-size:0.85rem;padding:1.1rem 2.8rem;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Réserver sur WhatsApp
+        </a>
+        <a href="https://www.instagram.com/soko_nail_artist/" target="_blank" class="btn-outline" style="font-size:0.82rem;padding:1.1rem 2.4rem;">
+          📸 Découvrir l'univers Instagram
+        </a>
+      </div>
+      <div class="final-trust reveal reveal-delay-3">
+        <div class="trust-item"><span class="trust-icon">✦</span> Produits Semilac® certifiés</div>
+        <div class="trust-item"><span class="trust-icon">✦</span> Résultat garanti 3–4 semaines</div>
+        <div class="trust-item"><span class="trust-icon">✦</span> Consultation personnalisée incluse</div>
+        <div class="trust-item"><span class="trust-icon">✦</span> Réponse WhatsApp sous 24h</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9. FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand-name">Soko Nail Artist ✦</div>
+        <p class="footer-brand-text">
+          Institut de beauté spécialisé en manucure, pose d'ongles gel et semi-permanent à Genève. Révélez l'élégance de vos mains avec des soins haut de gamme, des produits certifiés et un savoir-faire artisanal.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/soko_nail_artist/" target="_blank" class="footer-social-btn" title="Instagram Soko Nail Artist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/41779800793" target="_blank" class="footer-social-btn" title="WhatsApp Soko Nail Artist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-col-list">
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#solutions">Notre méthode</a></li>
+          <li><a href="#prestations">Prestations & Tarifs</a></li>
+          <li><a href="#preuves">Témoignages</a></li>
+          <li><a href="#about">À propos de Soko</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Services clés -->
+      <div>
+        <div class="footer-col-title">Nos spécialités</div>
+        <ul class="footer-col-list">
+          <li><a href="#prestations">Manucure Genève</a></li>
+          <li><a href="#prestations">Pose Ongles Gel Genève</a></li>
+          <li><a href="#prestations">Semi-permanent Genève</a></li>
+          <li><a href="#prestations">Nail Art Genève</a></li>
+          <li><a href="#prestations">Pédicure Genève</a></li>
+          <li><a href="#prestations">Renforcement Ongles</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="footer-col-title">Contact & Localisation</div>
+        <div class="footer-contact-item">
+          <span class="contact-ico">📍</span>
+          <div class="contact-val">Av. Pictet-de-Rochemont 37<br>1207 Genève, Suisse</div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="contact-ico">📱</span>
+          <div class="contact-val">
+            <a href="https://wa.me/41779800793" target="_blank">+41 77 980 07 93</a><br>
+            <span style="font-size:0.75rem;opacity:0.6">WhatsApp uniquement</span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <span class="contact-ico">🌸</span>
+          <div class="contact-val">
+            <a href="https://www.instagram.com/soko_nail_artist/" target="_blank">@soko_nail_artist</a>
+          </div>
+        </div>
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.9!2d6.163!3d46.201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7ac6b5a1f5e1%3A0x0!2sAv.+Pictet-de-Rochemont+37%2C+1207+Gen%C3%A8ve!5e0!3m2!1sfr!2sch!4v1"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation Soko Nail Artist Genève">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2025 Soko Nail Artist — Institut de beauté à Genève. Tous droits réservés.
+      </div>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+
+    <div class="footer-seo">
+      <p>
+        Soko Nail Artist est un institut de beauté spécialisé en manucure, pose d'ongles gel et semi-permanent à Genève (1207). Situé au 37, Avenue Pictet-de-Rochemont, l'établissement propose des soins haut de gamme des mains et des pieds : pose vernis classique, renforcement, remplissage, nail art sur-mesure, manicure complète et pédicure. Produits Semilac® certifiés. Réservation par WhatsApp uniquement. Mots-clés : manucure Genève, pose ongles gel Genève, semi-permanent Genève, nail artist Genève, pédicure Genève, beauté des mains Genève, institut ongles Genève Pictet-de-Rochemont.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+// --- Cursor custom ---
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  setTimeout(() => {
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  }, 80);
+});
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+    ring.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    ring.style.opacity = '0.9';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    ring.style.transform = 'translate(-50%, -50%) scale(1)';
+    ring.style.opacity = '0.5';
+  });
+});
+
+// --- Nav scroll ---
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// --- Reveal on scroll ---
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+// --- Tabs prestations ---
+function showTab(tab, btn) {
+  document.querySelectorAll('.prestation-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+// --- FAQ accordion ---
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
+
+  if (!isOpen) {
+    answer.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>
